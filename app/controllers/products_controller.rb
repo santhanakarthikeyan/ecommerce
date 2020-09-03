@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :add_to_cart]
 
   # GET /products
   # GET /products.json
@@ -57,6 +57,14 @@ class ProductsController < ApplicationController
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def add_to_cart
+    session[:item_list] ? session[:item_list] << @product.id : session[:item_list] = [@product.id]
+    respond_to do |format|
+      format.html { redirect_to products_url, notice: 'Product added to cart!' }
       format.json { head :no_content }
     end
   end
