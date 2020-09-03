@@ -28,4 +28,5 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
-<%= link_to " Cart(#{session[:item_list].size})", new_product_path, title: session[:item_list].join(', '), class: 'fa fa-shopping-cart'%>
+<%= link_to " Cart( #{session[:item_list].size} )", new_product_path, title: session[:item_list].join(', '), class: 'fa fa-shopping-cart'%>
+<%= link_to 'Clear Cart', clear_cart_path, method: :delete%>
