@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     post :add_to_cart
     collection do
       get :checkout
+      delete :clear_cart
     end
   end
 
-  delete :clear_cart, controller: 'products'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root '/', controller: :products, action: :index
 end
