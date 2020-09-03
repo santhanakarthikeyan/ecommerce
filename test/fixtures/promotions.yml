@@ -1,15 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  qty: 1
-  basket_price: 1.5
-  discount_price: 1.5
-  type: 
+  id: 1
+  name: BasketPromotion
+  qty: nil
+  basket_price: 150.0
+  discount_price: 20.0
+  type: BasketPromotion
 
 two:
-  name: MyString
-  qty: 1
-  basket_price: 1.5
-  discount_price: 1.5
-  type: 
+  id: 2
+  name: MultipleOfThree
+  qty: 3
+  basket_price: nil
+  discount_price: 15.0
+  type: ProductPromotion
+
+three:
+  id: 3
+  name: MultipleOfTwo
+  qty: 2
+  basket_price: nil
+  discount_price: 5.0
+  type: ProductPromotion

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PromotionsController < ApplicationController
-  before_action :set_promotion, only: [:show, :edit, :update, :destroy]
+  before_action :set_promotion, only: %i[show edit update destroy]
 
   # GET /promotions
   # GET /promotions.json
@@ -9,8 +11,7 @@ class PromotionsController < ApplicationController
 
   # GET /promotions/1
   # GET /promotions/1.json
-  def show
-  end
+  def show; end
 
   # GET /promotions/new
   def new
@@ -18,8 +19,7 @@ class PromotionsController < ApplicationController
   end
 
   # GET /promotions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /promotions
   # POST /promotions.json
@@ -62,13 +62,14 @@ class PromotionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_promotion
-      @promotion = Promotion.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def promotion_params
-      params.require(:promotion).permit(:name, :qty, :basket_price, :discount_price, :type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_promotion
+    @promotion = Promotion.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def promotion_params
+    params.require(:promotion).permit(:name, :qty, :basket_price, :discount_price, :type)
+  end
 end

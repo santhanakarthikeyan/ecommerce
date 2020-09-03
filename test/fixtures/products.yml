@@ -1,9 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  price: 1.5
+  name: Apple
+  price: 30.0
+  promotion_id: 2
 
 two:
-  name: MyString
-  price: 1.5
+  name: Ball
+  price: 20.0
+  promotion_id: 3
+
+three:
+  name: Computer
+  price: 50.0
+  promotion_id: nil
+
+four:
+  name: DataDog
+  price: 15.0
+  promotion_id: nil

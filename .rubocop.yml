@@ -1,0 +1,112 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 4.2
+  Exclude:
+    - vagrant/**/*
+    - tmp/**/*
+    - bin/*
+
+Rails:
+  Enabled: true
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 500
+
+Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Layout/SpaceInsideStringInterpolation:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: true
+
+Style/MultilineIfModifier:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: true
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - app/admin/*
+    - lib/tasks/**/*
+    - test/**/*
+    - app/views/admin/**/*
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Naming/VariableNumber:
+  Enabled: true
+  Exclude:
+    - test/**/*
+
+Lint/ScriptPermission:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: true
+  Whitelist:
+    find_by_url_and_branch
+    find_by_sql
+
+Style/GuardClause:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+
+Style/EmptyMethod:
+  Enabled: true
+
+Style/MixinGrouping:
+  Enabled: true
+
+Rails/ReversibleMigration:
+  Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  Exclude:
+    - app/lib/process_monitor.rb
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
